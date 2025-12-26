@@ -45,5 +45,4 @@ os.makedirs("evaluation", exist_ok=True)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
-print(f"\n✅ Готово! Результаты сохранены в {OUTPUT_FILE}")
-print("Теперь откройте файл и вручную проставьте 'is_correct': true/false для каждого ответа.")
+print(f"Результаты сохранены в {OUTPUT_FILE}. Проставьте 'is_correct': true/false для каждого ответа")

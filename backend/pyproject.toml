@@ -27,7 +27,8 @@ dependencies = [
     "scikit-learn",      
     "pydantic",
     "pymorphy3",
-    "pymorphy3-dicts-ru"
+    "pymorphy3-dicts-ru",
+    "tiktoken"
 ]
 
 [project.optional-dependencies]
