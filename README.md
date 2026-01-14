@@ -38,13 +38,51 @@
 
 Эти проверки автоматически запускаются перед каждым коммитом благодаря pre-commit.
 
-## Запуск
+## Запуск из папки front или backend
+
+для перехода внутрь папки 
+
+cd front или cd backend
 
 **Backend (FastAPI):**
+Для полноценной полноценной работы нужно переименовать .env_example.txt => .env и поменять зависимости внутри на реальные (mistral api)
+
 pip install -e . 
+
 uvicorn app.main:app --reload
+
 API будет доступно по адресу http://localhost:8000, документация — в Swagger (/docs).
 
+**либо с помощью докер**
+
+# Собрать образ
+docker build -t harry-potter-rag .
+
+# Запустить с API-ключом
+docker run -d -p 8000:8000 --env MISTRAL_API_KEY=ключ_здесь harry-potter-rag
+
+# Может загружаться долго, поэтому желательно посмотреть логи и ожидать сообщенй:
+NFO - Индексация завершена.
+INFO:     Application startup complete.
+
+Команда
+docker logs -f контейнер
+
+Будет доступно по адресу http://localhost:8000/docs
+
 **Frontend (React):**
+
+Для полноценной полноценной работы нужно переименовать .env.local_example => .env.local и поменять зависимости внутри на реальные (адрес бэкенда)
+
 npm install - установска зависимостей 
 npm run dev - для запуска в режиме разработки 
+
+**либо с помощью докер**
+
+# Собрать образ
+docker build -t tom-riddle-diary .
+
+# Запустить контейнер
+docker run -d -p 8080:80 --name diary tom-riddle-diary
+
+Будет доступно по адресу http://localhost:8080/
