@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harry-potter-rag" 
+version = "0.1.0"
+description = "This project implements a Retrieval-Augmented Generation (RAG) system for answering questions based on the Harry Potter book series using a Large Language Model (LLM)."
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff>=0.9.1", "pre-commit>=3.0.0"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "C", "B"]
+ignore = [
+    "E501", 
+    "W191", 
+    "E203", 
+    "E231", 
+    "E402", 
+    "E731",
+]
