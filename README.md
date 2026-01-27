@@ -41,6 +41,7 @@
 ## Запуск
 
 **Backend (FastAPI):**
+pip install -e . 
 uvicorn app.main:app --reload
 API будет доступно по адресу http://localhost:8000, документация — в Swagger (/docs).
 

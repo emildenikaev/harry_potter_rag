@@ -3,10 +3,33 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "harry-potter-rag" 
+name = "harry-potter-rag"
 version = "0.1.0"
 description = "This project implements a Retrieval-Augmented Generation (RAG) system for answering questions based on the Harry Potter book series using a Large Language Model (LLM)."
-dependencies = []
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sentence-transformers",
+    "transformers",
+    "chromadb",
+    "langchain",
+    "langchain-core",
+    "langchain-mistralai",
+    "langchain-text-splitters",
+    "langchain-community",
+    "langchain-huggingface",
+    "python-dotenv",
+    "rank-bm25",
+    "nltk",
+    "torch", 
+    "requests",
+    "numpy",             
+    "scikit-learn",      
+    "pydantic",
+    "pymorphy3",
+    "pymorphy3-dicts-ru",
+    "tiktoken"
+]
 
 [project.optional-dependencies]
 dev = ["ruff>=0.9.1", "pre-commit>=3.0.0"]
@@ -23,5 +46,5 @@ ignore = [
     "E203", 
     "E231", 
     "E402", 
-    "E731",
+    "E731"
 ]
